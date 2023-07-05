@@ -1,0 +1,110 @@
+:root {
+	--Moderate-violet: hsl(263, 55%, 52%);
+	--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+	--Light-gray: hsl(0, 0%, 81%);
+	--Light-grayish-blue: hsl(210, 46%, 95%);
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-size: 13px;
+	background-color: var(--Light-grayish-blue);
+}
+main {
+	margin: 1em;
+	display: grid;
+	gap: 1em;
+}
+main .box {
+	background-color: white;
+	padding: 1.5em;
+	border-radius: .9em;
+}
+main .vio {
+	background-image: url(../images/bg-pattern-quotation.svg);
+	background-repeat: no-repeat;
+	background-position: 90% 0;
+	background-color: var(--Moderate-violet);
+	color: white;
+}
+main .grey {
+	background-color: var(--Very-dark-grayish-blue);
+	color: white;
+}
+main .black {
+	background-color: var(--Very-dark-blackish-blue);
+	color: white;
+}
+main .box .person {
+	display: flex;
+	align-items: center;
+	gap: 1.4em;
+}
+main .box .person img {
+	border-radius: 50%;
+	width: 2.5em;
+}
+main .box .person .text .status {
+	margin-top: .2em;
+	color: hsla(0, 0%, 100%, 70%);
+}
+main .vio .person img,
+main .black .person img {
+	border: 2px solid hsl(263, 89%, 75%);
+}
+main > :nth-child(3) .person .text .status,
+main > :last-child .person .text .status {
+	color: hsla(0, 0%, 0%, 70%);
+}
+main .box > p:first-of-type {
+	margin: 1.5em 0;
+	font-weight: 600;
+	font-size: 1.8em;
+}
+main .box > p:last-of-type {
+	line-height: 1.8;
+	font-size: 1.1em;
+	color: hsla(0deg, 0%, 100%, 50%);
+}
+main > :nth-child(3) > p:last-of-type,
+main > :last-child > p:last-of-type {
+	color: hsla(0, 0%, 0%, 50%);
+}
+.attribution { 
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	text-decoration: none;
+	font-weight: 600;
+	color: var(--Moderate-violet);
+}
+@media (min-width: 900px) {
+	body {
+		height: 100vh;
+		display: grid;
+		place-items: center;
+	}
+	main {
+		width: 90%;
+    margin: auto;
+    display: grid;
+		gap: 2em;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+		grid-template-rows: repeat(2, 1fr);
+	}
+	main .vio {
+		grid-area: 1 / 1 / 2 / 3;;
+	}
+	main .black {
+		grid-area: 2 / 2 / 3 / 4;
+	}
+	main > .box:last-child {
+		grid-area: 1 / 4 / 3 / 5;
+	}
+}
